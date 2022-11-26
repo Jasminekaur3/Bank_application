@@ -1,6 +1,6 @@
 import sys
 
-class Bank:
+class Bank():
 	total_customers = 0
 
 	def __init__(self, acc_balance, name):
@@ -17,7 +17,7 @@ class Bank:
 		print("Welcome!!")
 
 	def show_options(self):
-		print('''1.Check the balance\n 2.Deposit\n 3.Withdraw \n 4.Exit''')
+		print(''' 1.Check the balance\n 2.Deposit\n 3.Withdraw \n 4.Exit''')
 
 	def process_choices(self):
 		user_choice = int(input("Enter choices:"))
@@ -25,13 +25,13 @@ class Bank:
 			print(f"Your account baance is: {self.acc_balance}")
 
 		elif user_choice == 2:
-			deposit_amt = int(input("Enter amt to be deposited"))
-			self.acc_balance += deposit_amt
+			deposit_amount = int(input("Enter amount to be deposited: "))
+			self.acc_balance += deposit_amount
 			print(f"Your account baance is: {self.acc_balance}")
 
 		elif user_choice == 3:
-			withdraw_amt = int(input("Enter the amt to withdraw"))
-			self.acc_balance -= withdraw_amt
+			withdraw_amount = int(input("Enter the amount to withdraw: "))
+			self.acc_balance -= withdraw_amount
 			print(f"Your account baance is: {self.acc_balance}")
 
 		elif user_choice == 4:
@@ -39,7 +39,7 @@ class Bank:
 				sys.exit()
 
 		else:
-			print("Wrong choice. Please enter one of the below options")
+			print("Wrong choice. Please enter one of the below options: ")
 			print("1 2 3 4")
 			sys.exit()
 
